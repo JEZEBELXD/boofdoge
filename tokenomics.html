@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOOF TOKEN – Tokenomics</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for graph -->
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="imgs/LOGO.png" alt="BOOF TOKEN Logo" class="small-logo">
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="tokenomics.html" class="nav-link">Tokenomics</a>
+        <a href="community.html" class="nav-link">Community</a>
+        <a href="contract.html" class="nav-link">Contract Address</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="tokenomics">
+    <section class="intro">
+      <h1>$BOOF Tokenomics</h1>
+      <p>Understanding how BOOF is distributed is the stepping stone for building trust.</p>
+    </section>
+
+    <!-- Futuristic Graph Section -->
+    <section class="tokenomics-graph">
+        <div class="container">
+            <h2>
+                <img src="imgs/diamond.png" alt="Diamond Icon" class="emoji-icon">BOOF Token Distribution
+            </h2>
+            <div class="pie-chart">
+                <svg viewBox="0 0 32 32" width="200" height="200">
+                    <!-- Each segment represents a portion of the pie -->
+                    <circle r="16" cx="16" cy="16" fill="transparent" stroke="#00f2ff" stroke-width="32" stroke-dasharray="30 70" transform="rotate(-90) translate(-32)" />
+                    <circle r="16" cx="16" cy="16" fill="transparent" stroke="#6565ff" stroke-width="32" stroke-dasharray="20 80" stroke-dashoffset="-30" transform="rotate(-90) translate(-32)" />
+                    <circle r="16" cx="16" cy="16" fill="transparent" stroke="#9f93ff" stroke-width="32" stroke-dasharray="15 85" stroke-dashoffset="-50" transform="rotate(-90) translate(-32)" />
+                    <circle r="16" cx="16" cy="16" fill="transparent" stroke="#c7c7ff" stroke-width="32" stroke-dasharray="15 85" stroke-dashoffset="-65" transform="rotate(-90) translate(-32)" />
+                    <circle r="16" cx="16" cy="16" fill="transparent" stroke="#f09eff" stroke-width="32" stroke-dasharray="20 80" stroke-dashoffset="-80" transform="rotate(-90) translate(-32)" />
+                </svg>
+            </div>
+            <ul class="legend">
+                <li><span style="background-color: #00f2ff"></span> 32.5% Liquidity</li>
+                <li><span style="background-color: #6565ff"></span> 2.5% Community</li>
+                <li><span style="background-color: #9f93ff"></span> 10% Marketing</li>
+                <li><span style="background-color: #c7c7ff"></span> 15% Reserves</li>
+                <li><span style="background-color: #f09eff"></span> % Governance</li>
+            </ul>
+        </div>
+    </section>        
+      
+    <!-- Breakdown Section -->
+    <section class="tokenomics-breakdown">
+        <div class="container">
+          <div class="breakdown-grid">
+            <div class="breakdown-item" data-id="liquidity">
+              <h3>💧 32.5% Liquidity</h3>
+              <p>Ensuring smooth trading and minimal slippage on exchanges.</p>
+            </div>
+            <div class="breakdown-item" data-id="community">
+              <h3>🛠️ 2.5% Community</h3>
+              <p>Rewards, airdrops, and initiatives for our dedicated holders.</p>
+            </div>
+            <div class="breakdown-item" data-id="marketing">
+              <h3>📢 10% Marketing</h3>
+              <p>Boosting visibility and adoption through strategic partnerships.</p>
+            </div>
+            <div class="breakdown-item" data-id="reserves">
+              <h3>🔒 15% Reserves</h3>
+              <p>Maintaining a stable treasury for long-term sustainability.</p>
+            </div>
+            <div class="breakdown-item" data-id="community-projects">
+              <h3>🚀 40% Governance</h3>
+              <p>Advancing the world forward by adopting crypto as the global currency!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer-container">
+          <!-- Logo -->
+          <div class="footer-logo">
+            <img src="imgs/LOGO.png" alt="BOOF Token Logo">
+          </div>
+      
+          <!-- Navigation Links -->
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="tokenomics.html">Tokenomics</a>
+            <a href="community.html">Community</a>
+          </div>
+      
+          <!-- Copyright -->
+          <div class="footer-copyright">
+            <p>© 2025 BOOF. All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>   
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
