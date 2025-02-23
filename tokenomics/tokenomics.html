@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOOF TOKEN – Tokenomics</title>
+  <link rel="stylesheet" href="/styles2.css">
+  <link rel="stylesheet" href="tokenomics.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="/imgs/LOGO.png" alt="BOOF TOKEN Logo" class="small-logo">
+      </div>
+      <nav class="nav">
+        <a href="/index.html" class="nav-link">Home</a>
+        <a href="/about/about.html" class="nav-link">About</a>
+        <a href="/tokenomics/tokenomics.html" class="nav-link">Tokenomics</a>
+        <a href="/community/community.html" class="nav-link">Community</a>
+        <a href="/contract/contract.html" class="nav-link">Contract Address</a>
+        <a href="/Developer/developer.html" class="nav-link">Developer Wallets</a>
+        <a href="/roadmap/roadmap.html" class="nav-link">Roadmap</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="tokenomics">
+    <section class="intro animate-on-scroll">
+      <h1>$BOOF Tokenomics</h1>
+      <p>With a total supply of 420 million tokens, BOOF is designed to foster trust and transparency through a strategic distribution plan.</p>
+    </section>
+
+    <!-- Interactive Pie Chart -->
+    <section class="tokenomics-graph animate-on-scroll">
+      <div class="container">
+        <h2>
+          <img src="../../imgs/diamond.png" alt="Diamond Icon" class="emoji-icon"> BOOF Token Distribution
+        </h2>
+        <div class="chart-container">
+          <canvas id="tokenomicsChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breakdown Section -->
+    <section class="tokenomics-breakdown animate-on-scroll">
+      <div class="container">
+        <h2>Distribution Breakdown</h2>
+        <p>Total Supply: 420,000,000 BOOF</p>
+        <div class="breakdown-grid">
+          <div class="breakdown-item" data-id="liquidity">
+            <h3>💧 32.5% Liquidity (136,500,000 BOOF)</h3>
+            <p>This allocation ensures smooth trading on decentralized exchanges like Raydium. It will be paired with SOL in liquidity pools, locked to prevent dumps, and gradually released to maintain market stability.</p>
+          </div>
+          <div class="breakdown-item" data-id="community">
+            <h3>🛠️ 2.5% Community (10,500,000 BOOF)</h3>
+            <p>Reserved for rewards, airdrops, and community initiatives. 50% will be distributed via airdrops to early adopters within the first 2 months, with the rest vested over 12 months for ongoing engagement programs.</p>
+          </div>
+          <div class="breakdown-item" data-id="marketing">
+            <h3>📢 10% Marketing (42,000,000 BOOF)</h3>
+            <p>Fuels visibility through partnerships, campaigns, and promotions. Half will be used for initial launch marketing, with the remainder vested over 24 months to support sustained growth and adoption.</p>
+          </div>
+          <div class="breakdown-item" data-id="reserves">
+            <h3>🔒 15% Reserves (63,000,000 BOOF)</h3>
+            <p>A treasury for future development and emergencies, locked in a multi-signature wallet. Usage will be proposed and voted on by governance, with a 24-month vesting period to ensure long-term stability.</p>
+          </div>
+          <div class="breakdown-item" data-id="community-projects">
+            <h3>🚀 40% Governance (168,000,000 BOOF)</h3>
+            <p>Dedicated to ecosystem projects voted on by holders, such as dApps or global crypto initiatives. Locked initially, with a 36-month linear vesting schedule to fund development as the community grows.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Launch Details Section -->
+    <section class="tokenomics-launch animate-on-scroll">
+      <div class="container">
+        <h2>Launch Plan & Token Details</h2>
+        <div class="launch-details">
+          <h3>Total Supply</h3>
+          <p>BOOF launches with a fixed supply of 420,000,000 tokens, reflecting a playful nod to meme culture while ensuring scarcity and value potential.</p>
+
+          <h3>Launch Mechanism</h3>
+          <p>The token will launch on the Solana blockchain via a fair distribution model. Initial liquidity (32.5%) will be seeded on Raydium, with no pre-sale to ensure equal opportunity for all participants.</p>
+
+          <h3>Liquidity Locking</h3>
+          <p>136.5M BOOF (32.5%) paired with SOL will be locked in liquidity pools.</p>
+
+          <h3>Mint Freezing</h3>
+          <p>The mint authority will be revoked post-launch, freezing the supply at 420M BOOF. This ensures no additional tokens can be created, guaranteeing a fixed cap for long-term trust.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Logo -->
+      <div class="footer-logo">
+        <img src="/imgs/LOGO.png" alt="BOOF Token Logo">
+      </div>
+  
+      <!-- Navigation Links -->
+      <div class="footer-links">
+        <a href="/index.html">Home</a>
+        <a href="/about/about.html">About</a>
+        <a href="/tokenomics/tokenomics.html">Tokenomics</a>
+        <a href="/tokenomics/community.html">Community</a>
+        <a href="/contract/contract.html">Contract Address</a>
+        <a href="/Developer/developer.html">Developer Wallets</a>
+      </div>
+  
+      <!-- Copyright -->
+      <div class="footer-copyright">
+        <p>© 2025 BOOF. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>  
+  <script>
+    // Chart.js Pie Chart
+    const ctx = document.getElementById('tokenomicsChart').getContext('2d');
+    const tokenomicsChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Liquidity', 'Community', 'Marketing', 'Reserves', 'Governance'],
+        datasets: [{
+          data: [32.5, 2.5, 10, 15, 40],
+          backgroundColor: ['#00f2ff', '#6565ff', '#9f93ff', '#c7c7ff', '#f09eff'],
+          borderWidth: 2,
+          borderColor: '#fff'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom', labels: { color: '#fff', font: { size: 14 } } },
+          tooltip: { callbacks: { label: (context) => `${context.label}: ${context.raw}%` } }
+        },
+        animation: { animateScale: true, animateRotate: true }
+      }
+    });
+
+    // Scroll Animation
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.animate-on-scroll');
+      elements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.8) {
+          el.classList.add('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll();
+
+    // Breakdown Item Hover
+    const breakdownItems = document.querySelectorAll('.breakdown-item');
+    breakdownItems.forEach(item => {
+      item.addEventListener('mouseenter', () => item.classList.add('hovered'));
+      item.addEventListener('mouseleave', () => item.classList.remove('hovered'));
+    });
+  </script>
+</body>
+</html>

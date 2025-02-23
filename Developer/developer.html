@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOF TOKEN – Developer Wallets</title>
+    <link rel="stylesheet" href="/styles2.css"> <!-- Corrected path -->
+    <link rel="stylesheet" href="/Developer/developer.css"> <!-- Corrected path -->
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="../../imgs/LOGO.png" alt="BOOF TOKEN Logo" class="small-logo">
+            </div>
+            <nav class="nav">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../about/about.html" class="nav-link">About</a>
+                <a href="../tokenomics/tokenomics.html" class="nav-link">Tokenomics</a>
+                <a href="../community/community.html" class="nav-link">Community</a>
+                <a href="../contract/contract.html" class="nav-link">Contract Address</a>
+                <a href="developer.html" class="nav-link">Developer Wallets</a>
+                <a href="/roadmap/roadmap.html" class="nav-link">Roadmap</a>
+            </nav>
+        </div>
+    </header>
+    <main class="developer-page">
+        <section class="intro animate-on-scroll">
+            <h1>Developer Wallets</h1>
+            <p>Transparency is key. Below are the wallets associated with the BOOF development team, including their purpose and vesting details.</p>
+        </section>
+
+        <section class="wallets-list animate-on-scroll">
+            <div class="container">
+                <h2>Wallet Addresses</h2>
+                <div class="wallets-grid">
+                    <div class="wallet-item animate-on-scroll">
+                        <h3>Core Developer Wallet</h3>
+                        <p class="wallet-address" id="core-wallet">9pMUWvzqtmrRoo2wTN9bSwqj1UEQhNGEkWnEvSunPaW3</p>
+                        <button class="copy-btn" onclick="copyWallet('core-wallet')">Copy</button>
+                        <p><strong>Purpose:</strong> Funding core team development efforts.</p>
+                        <p><strong>Balance:</strong> 8,400,000 BOOF (2% of supply)</p>
+                        <p><strong>Source:</strong> Reserves</p>
+                        <p><strong>Vesting:</strong> 10% available at launch, 90% locked for 6 months, then linear vesting over 24 months.</p>
+                    </div>
+                    <div class="wallet-item animate-on-scroll">
+                        <h3>Marketing Lead Wallet</h3>
+                        <p class="wallet-address" id="marketing-wallet">FBiERNLEEbv49V6ZzJDd5Nf8CkbMpbrDbwskNTD4G5RB</p>
+                        <button class="copy-btn" onclick="copyWallet('marketing-wallet')">Copy</button>
+                        <p><strong>Purpose:</strong> Allocated for marketing coordination.</p>
+                        <p><strong>Balance:</strong> 4,200,000 BOOF (1% of supply)</p>
+                        <p><strong>Source:</strong> Marketing</p>
+                        <p><strong>Vesting:</strong> 50% available at launch, 50% vested over 12 months.</p>
+                    </div>
+                    <div class="wallet-item animate-on-scroll">
+                        <h3>Advisor Wallet</h3>
+                        <p class="wallet-address" id="advisor-wallet">GpVy2ECgkg1iFm6RogFU2YyCYG87UaJwaist8AQCHSu8</p>
+                        <button class="copy-btn" onclick="copyWallet('advisor-wallet')">Copy</button>
+                        <p><strong>Purpose:</strong> Compensation for strategic advisors.</p>
+                        <p><strong>Balance:</strong> 2,100,000 BOOF (0.5% of supply)</p>
+                        <p><strong>Source:</strong> Reserves</p>
+                        <p><strong>Vesting:</strong> Fully locked for 12 months, then released.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="../../imgs/LOGO.png" alt="BOOF Token Logo">
+            </div>
+            <div class="footer-links">
+                <a href="../../index.html">Home</a>
+                <a href="../about/about.html">About</a>
+                <a href="../tokenomics/tokenomics.html">Tokenomics</a>
+                <a href="../community/community.html">Community</a>
+                <a href="../contract/contract.html">Contract Address</a>
+                <a href="developer.html">Developer Wallets</a>
+                <a href="/roadmap/roadmap.html">Roadmap</a>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2025 BOOF. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Copy Wallet Address with Fallback
+        function copyWallet(walletId) {
+            const walletText = document.getElementById(walletId).innerText;
+            const btn = event.target;
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(walletText).then(() => {
+                    btn.textContent = 'Copied!';
+                    btn.classList.add('copied');
+                    setTimeout(() => {
+                        btn.textContent = 'Copy';
+                        btn.classList.remove('copied');
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Clipboard API failed: ', err);
+                    fallbackCopy(walletText, btn);
+                });
+            } else {
+                fallbackCopy(walletText, btn);
+            }
+        }
+
+        function fallbackCopy(text, btn) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                console.error('Fallback copy failed: ', err);
+                alert('Failed to copy address. Please copy manually.');
+            } finally {
+                document.body.removeChild(textArea);
+            }
+        }
+
+        // Updated Scroll Effects
+        function updateScrollEffects() {
+            const windowHeight = window.innerHeight;
+            const scrollPos = window.scrollY;
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const distanceFromTop = rect.top;
+
+                // Start fully visible if within the top portion of the viewport on load
+                let opacity, translateY;
+                if (distanceFromTop <= windowHeight * 0.75) {
+                    // Elements in the top 75% of the viewport fade in from 0.8 to 1
+                    opacity = Math.min(1, 0.8 + (windowHeight * 0.75 - distanceFromTop) / (windowHeight * 0.5));
+                    translateY = Math.max(0, 20 * (1 - (opacity - 0.8) / 0.2));
+                } else {
+                    // Elements further down fade in as they approach
+                    opacity = Math.min(1, Math.max(0.8, 1 - (distanceFromTop - windowHeight * 0.75) / (windowHeight * 0.5)));
+                    translateY = Math.max(0, 20 * (1 - (opacity - 0.8) / 0.2));
+                }
+
+                el.style.opacity = opacity;
+                el.style.transform = `translateY(${translateY}px)`;
+
+                if (el.classList.contains('wallet-item')) {
+                    const scale = 0.95 + (opacity - 0.8) * 0.25; // Slight scale from 0.95 to 1
+                    el.style.transform = `translateY(${translateY}px) scale(${scale})`;
+                }
+            });
+
+            // Bubble Parallax
+            const bubbles = [
+                document.querySelector('.developer-page::before'),
+                document.querySelector('.developer-page::after'),
+                document.querySelector('.bubble-1'),
+                document.querySelector('.bubble-2')
+            ];
+            bubbles.forEach((bubble, index) => {
+                if (bubble) {
+                    const speed = 0.1 + index * 0.05;
+                    bubble.style.transform = `translateY(${scrollPos * speed}px)`;
+                }
+            });
+        }
+
+        // Run on load and on scroll
+        window.addEventListener('scroll', updateScrollEffects);
+        document.addEventListener('DOMContentLoaded', () => {
+            updateScrollEffects(); // Trigger immediately on load
+            const developerPage = document.querySelector('.developer-page');
+            const bubble1 = document.createElement('div');
+            const bubble2 = document.createElement('div');
+            bubble1.className = 'bubble-1';
+            bubble2.className = 'bubble-2';
+            developerPage.appendChild(bubble1);
+            developerPage.appendChild(bubble2);
+        });
+    </script>
+</body>
+</html>

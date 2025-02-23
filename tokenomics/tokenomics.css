@@ -1,0 +1,253 @@
+/* Tokenomics.css */
+
+/* General Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #0a0a30, #1c1c50);
+  color: #e3e3ff;
+  margin: 0;
+  padding: 0;
+  line-height: 1.8;
+}
+
+/* Tokenomics Page */
+.tokenomics {
+  padding: 80px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  overflow: visible; /* Allows scrolling */
+}
+
+/* Intro Section */
+.intro {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.intro h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #00f2ff;
+  text-shadow: 0 0 20px rgba(0, 242, 255, 0.8);
+  margin-bottom: 15px;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.intro p {
+  font-size: 1.4rem;
+  color: #b0b0ff;
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+/* Tokenomics Graph Section */
+.tokenomics-graph {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #12123a, #1a1a40);
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 242, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  animation: backgroundGlow 5s infinite alternate;
+  margin-bottom: 60px;
+}
+
+.tokenomics-graph::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(0, 242, 255, 0.2), transparent);
+  border-radius: 50%;
+  animation: floatAnimation 6s infinite alternate;
+}
+
+.tokenomics-graph::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(159, 147, 255, 0.2), transparent);
+  border-radius: 50%;
+  animation: floatAnimation 7s infinite alternate-reverse;
+}
+
+.tokenomics-graph h2 {
+  font-size: 2.5rem;
+  color: #c0c0ff;
+  text-shadow: 0 0 15px rgba(101, 101, 255, 0.7);
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.chart-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+}
+
+canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Tokenomics Breakdown Section */
+.tokenomics-breakdown {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(180deg, #1a1a40, #12123a);
+  margin-bottom: 60px;
+}
+
+.tokenomics-breakdown h2 {
+  font-size: 2.5rem;
+  color: #00f2ff;
+  text-shadow: 0 0 15px rgba(0, 242, 255, 0.7);
+  margin-bottom: 20px;
+}
+
+.tokenomics-breakdown > .container > p {
+  font-size: 1.3rem;
+  color: #b0b0ff;
+  margin-bottom: 40px;
+}
+
+.breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.breakdown-item {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(50, 50, 120, 0.5);
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.breakdown-item::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(0, 242, 255, 0.1);
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.breakdown-item.hovered::before,
+.breakdown-item:hover::before {
+  opacity: 0.3;
+}
+
+.breakdown-item.hovered,
+.breakdown-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.6);
+  border-color: #00f2ff;
+}
+
+.breakdown-item h3 {
+  font-size: 1.6rem;
+  color: #b0b0ff;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.breakdown-item p {
+  font-size: 1.1rem;
+  color: #bfbfff;
+}
+
+/* Tokenomics Launch Section */
+.tokenomics-launch {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(180deg, #12123a, #0a0a30);
+}
+
+.tokenomics-launch h2 {
+  font-size: 2.5rem;
+  color: #00f2ff;
+  text-shadow: 0 0 15px rgba(0, 242, 255, 0.7);
+  margin-bottom: 40px;
+}
+
+.launch-details {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.launch-details h3 {
+  font-size: 1.8rem;
+  color: #b0b0ff;
+  margin-bottom: 15px;
+}
+
+.launch-details p {
+  font-size: 1.2rem;
+  color: #bfbfff;
+  margin-bottom: 30px;
+}
+
+/* Animations */
+@keyframes backgroundGlow {
+  0% { background: linear-gradient(135deg, #12123a, #1a1a40); }
+  100% { background: linear-gradient(135deg, #1a1a40, #12123a); }
+}
+
+@keyframes floatAnimation {
+  0% { transform: translateY(0) translateX(0); }
+  100% { transform: translateY(15px) translateX(10px); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .intro h1 { font-size: 2.5rem; }
+  .intro p { font-size: 1.2rem; }
+  .tokenomics-graph h2, .tokenomics-breakdown h2, .tokenomics-launch h2 { font-size: 2rem; }
+  .chart-container { max-width: 400px; }
+  .breakdown-item h3 { font-size: 1.4rem; }
+  .breakdown-item p { font-size: 1rem; }
+  .launch-details h3 { font-size: 1.6rem; }
+  .launch-details p { font-size: 1.1rem; }
+}
+
+@media (max-width: 480px) {
+  .tokenomics { padding: 40px 10px; }
+  .tokenomics-graph, .tokenomics-breakdown, .tokenomics-launch { padding: 40px 10px; }
+  .breakdown-grid { grid-template-columns: 1fr; }
+}

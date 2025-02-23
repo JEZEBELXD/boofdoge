@@ -1,0 +1,289 @@
+/* developer.css */
+
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(180deg, #0a0a30, #1c1c50);
+    color: #e3e3ff;
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+/* Developer Page */
+.developer-page {
+    padding: 80px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    overflow: visible;
+    background: radial-gradient(circle at center, rgba(0, 242, 255, 0.1) 0%, transparent 70%), 
+                linear-gradient(180deg, #0a0a30, #1c1c50);
+}
+
+/* Background Effects - Floating Bubbles */
+.developer-page::before {
+    content: '';
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(0, 242, 255, 0.15), transparent);
+    border-radius: 50%;
+    animation: floatAnimation 8s infinite ease-in-out;
+    z-index: 0;
+    opacity: 0.7;
+    transition: transform 0.5s ease-out; /* Smooth scroll effect */
+}
+
+.developer-page::after {
+    content: '';
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(159, 147, 255, 0.15), transparent);
+    border-radius: 50%;
+    animation: floatAnimation 10s infinite ease-in-out reverse;
+    z-index: 0;
+    opacity: 0.7;
+    transition: transform 0.5s ease-out; /* Smooth scroll effect */
+}
+
+.developer-page .bubble-1 {
+    position: absolute;
+    top: 20%;
+    right: 15%;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(101, 101, 255, 0.12), transparent);
+    border-radius: 50%;
+    animation: floatAnimation 9s infinite ease-in-out;
+    z-index: 0;
+    opacity: 0.6;
+    transition: transform 0.5s ease-out; /* Smooth scroll effect */
+}
+
+.developer-page .bubble-2 {
+    position: absolute;
+    bottom: 15%;
+    left: 20%;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(240, 158, 255, 0.1), transparent);
+    border-radius: 50%;
+    animation: floatAnimation 7s infinite ease-in-out reverse;
+    z-index: 0;
+    opacity: 0.6;
+    transition: transform 0.5s ease-out; /* Smooth scroll effect */
+}
+
+.developer-page::after, .developer-page::before, .developer-page .bubble-1, .developer-page .bubble-2 {
+    pointer-events: none;
+}
+
+/* Intro Section */
+.intro {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth scroll effect */
+}
+
+.intro.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.intro h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #00f2ff;
+    text-shadow: 0 0 20px rgba(0, 242, 255, 0.8);
+    margin-bottom: 15px;
+}
+
+.intro p {
+    font-size: 1.4rem;
+    color: #b0b0ff;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Wallets List Section */
+.wallets-list {
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #12123a, #1a1a40);
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 242, 255, 0.3);
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth scroll effect */
+}
+
+.wallets-list.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.wallets-list h2 {
+    font-size: 2.5rem;
+    color: #c0c0ff;
+    text-shadow: 0 0 15px rgba(101, 101, 255, 0.7);
+    margin-bottom: 40px;
+}
+
+.wallets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.wallet-item {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(50, 50, 120, 0.5);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0.7;
+    transform: scale(0.95);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.6s ease-out, border-color 0.6s ease-out; /* Smooth scroll effect */
+}
+
+.wallet-item.visible {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.6);
+    border-color: #00f2ff;
+}
+
+.wallet-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.6);
+    border-color: #00f2ff;
+}
+
+.wallet-item h3 {
+    font-size: 1.6rem;
+    color: #b0b0ff;
+    margin-bottom: 15px;
+}
+
+.wallet-item .wallet-address {
+    font-size: 1.2rem;
+    font-weight: bold;
+    word-break: break-all;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px;
+    border-radius: 8px;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 15px;
+    transition: background 0.3s ease;
+}
+
+.wallet-item .wallet-address:hover {
+    background: rgba(0, 242, 255, 0.2);
+}
+
+.wallet-item p {
+    font-size: 1.1rem;
+    color: #bfbfff;
+    margin: 5px 0;
+}
+
+/* Copy Button with Constant Shine */
+.wallet-item .copy-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #00f2ff, #6565ff);
+    color: #1a1a40;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.wallet-item .copy-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    animation: shine 3.5s infinite ease-in-out; /* Constant shine */
+}
+
+.wallet-item .copy-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.8);
+}
+
+.wallet-item .copy-btn:active {
+    animation: pulse 0.3s ease-in-out;
+}
+
+.wallet-item .copy-btn.copied {
+    background: linear-gradient(135deg, #1a1a40, #323278);
+    color: #00f2ff;
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.6);
+}
+
+/* Animations */
+@keyframes floatAnimation {
+    0% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(20px) translateX(15px); }
+    100% { transform: translateY(0) translateX(0); }
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .intro h1 { font-size: 2.5rem; }
+    .intro p { font-size: 1.2rem; }
+    .wallets-list h2 { font-size: 2rem; }
+    .wallet-item h3 { font-size: 1.4rem; }
+    .wallet-item .wallet-address { font-size: 1rem; }
+    .wallet-item p { font-size: 1rem; }
+    .wallet-item .copy-btn { padding: 8px 16px; font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+    .developer-page { padding: 40px 10px; }
+    .wallets-list { padding: 40px 10px; }
+    .wallets-grid { grid-template-columns: 1fr; }
+}

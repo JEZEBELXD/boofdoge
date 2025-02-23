@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOF Contract Address</title>
+    <link rel="stylesheet" href="/styles2.css">
+    <link rel="stylesheet" href="contract.css"
+</head>
+<body class="contract-page">
+    <main class="contract-page">
+        <section class="contract-container animate-on-scroll">
+            <h2>BOOF Token Contract Address</h2>
+            <div class="address-wrapper">
+                <p id="contract-address">COMING SOON</p> <!-- Placeholder; replace with actual address -->
+            </div>
+            <button class="copy-btn" onclick="copyContract()">Copy Address</button>
+        </section>
+    </main>
+    <script>
+        function copyContract() {
+            const contractText = document.getElementById("contract-address").innerText;
+            navigator.clipboard.writeText(contractText).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'Copy Address';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        // Scroll Animation
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll();
+    </script>
+<footer>
+      <!-- Navigation Links -->
+      <div class="footer-links">
+        <br>
+        <br>
+          <a href="/index.html">Home</a>
+          <a href="/about/about.html">About</a>
+          <a href="/tokenomics/tokenomics.html">Tokenomics</a>
+          <a href="/community/community.html">Community</a>
+          <a href="/contract/contract.html">Contract Address</a>
+          <a href="/Developer/developer.html">Developer Wallets</a>
+          <a href="/roadmap/roadmap.html">Roadmap</a>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-copyright">
+          <p>© 2025 BOOF. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
